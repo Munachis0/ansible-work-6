@@ -1,0 +1,15 @@
+---
+- name: Update server
+  hosts: n1:n2:n3:n4
+
+  tasks:
+  - name: create Directory
+    file:
+      path: /home/ec2-user/opt/
+      state: directory
+  
+  - name: create Directory
+    file:
+      path: /home/ec2-user/devops/
+      state: directory
+...
