@@ -1,15 +1,14 @@
 ---
-- name: Update server
-  hosts: n1:n2:n3:n4
-
+- name: create a file with specific content
+  hosts: all
   tasks:
-  - name: create Directory
-    file:
-      path: /home/ec2-user/opt/
-      state: directory
+  - name: create info.txt inside /opt/
+    copy:
+      content: "Hello from Ansible!"
+      dest: /home/ec2-user/opt/info.txt
   
-  - name: create Directory
-    file:
-      path: /home/ec2-user/devops/
-      state: directory
+  - name: create info.txt inside /devops/
+    copy:
+      content: "Hello from Ansible!"
+      dest: /home/ec2-user/devops/info.txt
 ...
